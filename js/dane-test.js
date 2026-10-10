@@ -15,7 +15,7 @@ const FISZKI = [
   { m: "dozor", p: "Kto wydaje polecenie wykonania pracy?", o: "Poleceniodawca (zwykle osoba dozoru upoważniona przez pracodawcę)." },
   { m: "dozor", p: "Kto robi instruktaż o zagrożeniach w strefie pracy?", o: "Dopuszczający — przy dopuszczeniu zespołu do pracy." },
   { m: "dozor", p: "Pięć zasad przygotowania miejsca pracy?", o: "1) wyłącz, 2) zabezpiecz przed załączeniem, 3) sprawdź brak napięcia, 4) uziem i zewrzyj, 5) osłoń sąsiednie części pod napięciem i oznacz strefę." },
-  { m: "dozor", p: "Kiedy wolno pracować bez polecenia?", o: "Przy ratowaniu życia/zdrowia i zapobieganiu awarii (z niezwłocznym powiadomieniem przełożonego) oraz przy pracach stałych wg instrukcji eksploatacji." },
+  { m: "dozor", p: "Kiedy wolno pracować bez polecenia?", o: "Przy ratowaniu zdrowia lub życia ludzkiego albo środowiska, przy zabezpieczaniu mienia przed zniszczeniem (osoby uprawnione) oraz przy pracach określonych w instrukcji eksploatacji." },
   { m: "dozor", p: "Kto opracowuje instrukcję eksploatacji?", o: "Pracodawca / właściciel urządzeń." },
   // podstawy
   { m: "podstawy", p: "Granica bardzo niskiego napięcia ELV?", o: "AC ≤ 50 V, DC ≤ 120 V." },
@@ -187,7 +187,7 @@ const PYTANIA = [
   { m: "przepisy", p: "Osoba na stanowisku dozoru (D):", odp: ["wykonuje wyłącznie pomiary", "kieruje pracami i sprawuje nadzór nad eksploatacją", "nie potrzebuje kwalifikacji", "może tylko obsługiwać urządzenia"], ok: 1, w: "D — kierowanie i nadzór, E — wykonywanie prac." },
   { m: "egzamin", p: "Świadectwo kwalifikacyjne jest ważne:", odp: ["bezterminowo", "3 lata", "5 lat", "10 lat"], ok: 2, w: "5 lat." },
   { m: "dozor", p: "Pierwszą czynnością przygotowania miejsca pracy jest:", odp: ["uziemienie", "wyłączenie napięcia", "sprawdzenie braku napięcia", "ogrodzenie strefy"], ok: 1, w: "Wyłącz → zabezpiecz → sprawdź → uziem → osłoń." },
-  { m: "dozor", p: "Bez polecenia wolno wykonywać prace:", odp: ["wszystkie do 1 kV", "przy ratowaniu życia i zapobieganiu awarii (z powiadomieniem)", "żadne", "tylko w nocy"], ok: 1, w: "Wyjątek: ratowanie życia/zdrowia i zapobieganie awarii — z niezwłocznym powiadomieniem przełożonego." },
+  { m: "dozor", p: "Bez polecenia pisemnego wolno (§ 29 rozp. 2019):", odp: ["wykonywać wszystkie prace do 1 kV", "ratować zdrowie lub życie ludzkie albo środowisko", "pracować przy urządzeniach pod napięciem, jeśli praca trwa krótko", "nic — każda praca wymaga polecenia pisemnego"], ok: 1, w: "Bez polecenia pisemnego: ratowanie zdrowia, życia lub środowiska, zabezpieczanie mienia przed zniszczeniem (osoby uprawnione) i prace określone w instrukcji eksploatacji." },
   { m: "dozor", p: "Wykaz prac wymagających polecenia pisemnego ustala:", odp: ["SEP", "pracodawca", "UDT", "kierujący zespołem"], ok: 1, w: "Pracodawca ustala i aktualizuje wykaz." },
   { m: "dozor", p: "Zabezpieczenie przed ponownym załączeniem to m.in.:", odp: ["założenie uziemiacza", "blokada napędu i tablica ostrzegawcza „Nie załączać”", "zmierzenie napięcia", "odczyt licznika"], ok: 1, w: "Blokady, wyjęte wkładki, tablice." },
   { m: "instalacje", p: "W gnieździe wtykowym przewód fazowy podłącza się (patrząc od przodu) do zacisku:", odp: ["prawego", "lewego", "bolca", "dowolnego"], ok: 1, w: "L — zawsze po lewej." },

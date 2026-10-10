@@ -25,7 +25,7 @@ const MODULY = [
   <li><b>Min. Klimatu i Środowiska z 1 lipca 2022 r.</b> — szczegółowe zasady stwierdzania kwalifikacji osób zajmujących się eksploatacją urządzeń, instalacji i sieci (to na jego podstawie zdajesz egzamin).</li>
   <li><b>Min. Energii z 28 sierpnia 2019 r.</b> — BHP przy urządzeniach i instalacjach energetycznych (polecenia, strefy pracy, prace szczególnie niebezpieczne).</li>
   <li><b>Min. Infrastruktury z 12 kwietnia 2002 r.</b> — warunki techniczne, jakim powinny odpowiadać budynki (instalacje elektryczne: §180–190).</li>
-  <li><b>Min. Gospodarki z 4 maja 2007 r.</b> — warunki funkcjonowania systemu elektroenergetycznego.</li>
+  <li><b>Min. Klimatu i Środowiska z 22 marca 2023 r.</b> — szczegółowe warunki funkcjonowania systemu elektroenergetycznego (zastąpiło rozporządzenie z 4 maja 2007 r.).</li>
 </ul>
 <h3>Normy</h3>
 <p><b>PN-HD 60364</b> — Instalacje elektryczne niskiego napięcia:</p>

@@ -267,3 +267,36 @@ RYS.strefy = function () {
   s += `<text x="320" y="190" text-anchor="middle" class="s-txt">poza zewnętrzną granicą — praca „z dala od napięcia”</text>`;
   return s + `</svg>`;
 };
+
+/* ---------------------------------------------------------------- praca na polecenie pisemne
+   Kto komu przekazuje pracę: polecenie → przygotowanie strefy → dopuszczenie → praca → zakończenie (§ 30 rozp. 2019). */
+RYS.przebieg = function () {
+  const kroki = [
+    [["Polecenio-", "dawca"], "D", "wydaje polecenie"],
+    [["Koordynujący"], "D", "zezwala"],
+    [["Dopuszczający"], "E", "dopuszcza"],
+    [["Kierujący", "zespołem"], "E", "przejmuje strefę"],
+    [["Zespół"], "", "≥ 2 osoby, praca"],
+  ];
+  const w = 118, gap = 12, x0 = 2;
+  let s = `<svg viewBox="0 0 640 200" role="img" aria-label="Przebieg pracy na polecenie pisemne">
+    <defs><marker id="grot-p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" class="s-grot"/></marker></defs>`;
+  kroki.forEach(([tyt, sw, opis], i) => {
+    const x = x0 + i * (w + gap), sx = x + w / 2;
+    s += `<rect x="${x}" y="38" width="${w}" height="92" rx="10" class="${sw === "D" ? "s-ramka" : "s-obud"}"/>`;
+    tyt.forEach((t, j) => { s += `<text x="${sx}" y="${60 + j * 16}" text-anchor="middle" class="s-txt b">${t}</text>`; });
+    const y = 60 + tyt.length * 16 + 4;
+    if (sw) s += `<text x="${sx}" y="${y}" text-anchor="middle" class="s-txt">świadectwo ${sw}</text>`;
+    s += `<text x="${sx}" y="${y + (sw ? 18 : 0)}" text-anchor="middle" class="s-txt">${opis}</text>`;
+    if (i < kroki.length - 1) s += `<line x1="${x + w + 1}" y1="84" x2="${x + w + gap - 1}" y2="84" class="s-str" marker-end="url(#grot-p)"/>`;
+  });
+  const xa = x0 + 2 * (w + gap) + 8, xb = x0 + 3 * (w + gap) + w - 8, xs = (xa + xb) / 2;
+  const xl = x0 + w / 2 + (w + gap) / 2;
+  s += `<text x="320" y="22" text-anchor="middle" class="s-txt b">polecenie → przygotowanie strefy → dopuszczenie → praca → zakończenie</text>
+    <path d="M${xa} 146 H${xb}" class="s-akcl"/>
+    <text x="${xs}" y="166" text-anchor="middle" class="s-txt b">tych dwóch funkcji nie łączy się</text>
+    <text x="${xs}" y="184" text-anchor="middle" class="s-txt">(wyjątek: prace pod napięciem)</text>
+    <text x="${xl}" y="166" text-anchor="middle" class="s-txt">jedna osoba —</text>
+    <text x="${xl}" y="184" text-anchor="middle" class="s-txt">najwyżej 2 funkcje</text>`;
+  return `<figure class="rys">${s}</svg><figcaption>Ramki pogrubione — funkcje wymagające świadectwa D.</figcaption></figure>`;
+};

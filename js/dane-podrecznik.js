@@ -1,6 +1,6 @@
 /* Uzupełnienia z „Podręcznika SEP G1 E+D 2026” (opracowanie przygotowane przez ChatGPT,
    10.10.2026). Podręcznik jest celowo ogólny i bez liczb — wartości graniczne bierzemy ze slajdów.
-   Stąd: podstawy elektrotechniki, aparatura, protokół z pomiarów, ocena ryzyka, trening ustny. */
+   Stąd: podstawy elektrotechniki, aparatura, protokół z pomiarów, pytania ustne. */
 "use strict";
 
 /* Nowy moduł: podstawy elektrotechniki — wstawiony za modułem „Napięcia, przewody”. */
@@ -78,57 +78,7 @@ MODULY.find((m) => m.id === "pomiary").sekcje.push({
 <div class="wazne"><b>Protokół z pomiarów musi zawierać</b>obiekt i obwód, datę i zakres, metodę, <b>przyrząd z numerem</b>, wyniki, kryteria oceny (wartości dopuszczalne), wnioski i osobę wykonującą (z uprawnieniami). Samo „pozytywny” bez kryterium to błąd. Wynik niejednoznaczny — nie potwierdzać zgodności. Protokoły się przechowuje.</div>`,
 });
 
-/* Dozór: ocena ryzyka i reagowanie. */
-MODULY.find((m) => m.id === "dozor").sekcje.push({
-  t: "Ocena ryzyka i reagowanie na zagrożenie", zr: "podręcznik",
-  h: `
-<ul>
-  <li><b>Ocena ryzyka</b> — identyfikuje zagrożenia i wyznacza środki ochronne, organizację pracy i sposób reagowania.</li>
-  <li><b>Upoważnienie do pracy</b> — formalne dopuszczenie do określonych czynności w danej firmie (świadectwo SEP go nie zastępuje, tak jak nie zastępuje szkolenia stanowiskowego).</li>
-  <li><b>D nie upoważnia automatycznie do pracy jako E</b> — do osobistego wykonywania prac potrzebne są kwalifikacje E.</li>
-  <li>Instrukcje eksploatacji się <b>aktualizuje</b> (zmiany techniczne, ryzyka, przepisy); dokumentacja producenta określa wymagania dla konkretnego urządzenia.</li>
-</ul>
-<div class="wazne czerwone"><b>Zagrożenie → wstrzymanie pracy → zabezpieczenie → zgłoszenie</b>Osoba dozoru nie dopuszcza prac bez kwalifikacji, bez oceny zagrożeń ani przy nieusuniętych nieprawidłowościach. Przed przywróceniem urządzenia do eksploatacji — potwierdzenie spełnienia wymagań przez upoważnione osoby.</div>`,
-});
-
-/* Egzamin: podstawa prawna, zakres, trening ustny, plan nauki. */
-MODULY.find((m) => m.id === "egzamin").sekcje.push(
-  {
-    t: "Zakres świadectwa — sprawdź wniosek", zr: "podręcznik",
-    h: `
-<p>Świadectwo określa <b>grupę</b>, <b>stanowisko</b> (E lub D), <b>rodzaje urządzeń</b> i <b>rodzaje czynności</b>. Samo „do 1 kV” nie obejmuje automatycznie wszystkich urządzeń i czynności. Zakres wiedzy dla E i D: <b>§ 6 rozporządzenia z 1 lipca 2022 r. (Dz.U. 2022 poz. 1392)</b>.</p>
-<ul>
-  <li>czy wniosek obejmuje <b>E i D</b>,</li>
-  <li>czy zaznaczono urządzenia <b>do 1 kV</b>,</li>
-  <li>czy wskazano <b>prace kontrolno-pomiarowe</b>,</li>
-  <li>czy potrzebne są inne urządzenia (agregaty, PV, magazyny energii),</li>
-  <li>jakie dokumenty wymaga komisja.</li>
-</ul>
-<p>Ukończenie kursu ≠ zdanie egzaminu. Nie ma jednej ogólnopolskiej, oficjalnej listy pytań — każda komisja pyta po swojemu, w granicach zgłoszonego zakresu.</p>`,
-  },
-  {
-    t: "Jak odpowiadać komisji", zr: "podręcznik",
-    h: `
-<ol class="kroki">
-  <li><b>Definicja</b> — czym to jest.</li>
-  <li><b>Zastosowanie</b> — do czego służy.</li>
-  <li><b>Zagrożenia</b> — co może pójść źle.</li>
-  <li><b>Bezpieczeństwo</b> — jakie warunki trzeba spełnić.</li>
-  <li><b>Kryterium / przykład</b> — liczba z normy, jeśli ją znasz. <b>Jeśli nie znasz progu — nie zgaduj.</b></li>
-</ol>
-<p>Ćwicz w zakładce <a href="#/ustny">Trening ustny</a>: losowe pytanie, odpowiadasz na głos 60–90 s, potem porównujesz z modelową odpowiedzią.</p>
-<h3>Plan nauki na 10 dni</h3>
-<div class="tabela-wrap"><table>
-<tr><th>Dzień</th><th>Temat</th></tr>
-<tr><td>1–2</td><td>podstawy, jednostki, obliczenia, napięcia</td></tr>
-<tr><td>3–4</td><td>układy sieci, aparatura, oznaczenia</td></tr>
-<tr><td>5–6</td><td>ochrona przeciwporażeniowa, BHP, pierwsza pomoc</td></tr>
-<tr><td>7–8</td><td>pomiary: wartości, metody, protokoły</td></tr>
-<tr><td>9</td><td>dozór, organizacja pracy, dokumentacja</td></tr>
-<tr><td>10</td><td>fiszki + 2 testy próbne + trening ustny</td></tr>
-</table></div>`,
-  },
-);
+/* Ocena ryzyka, plan nauki i „jak odpowiadać” z podręcznika weszły do lekcji Egzamin i Dozór (dane-dozor.js). */
 
 /* Pytania ustne z podręcznika (wybór — z pominięciem oczywistości), z modelowymi odpowiedziami. */
 const USTNE = [

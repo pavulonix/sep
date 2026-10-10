@@ -10,8 +10,11 @@ Adres docelowy: **https://sep.sys4ops.com** — dostęp **tylko z domowego IP** 
   ze sklepu, logo, duplikat slajdu. Przy każdej sekcji jest numer zdjęcia („slajd 17”).
 - „Podręcznik SEP G1 E+D 2026” (PDF przygotowany przez ChatGPT) — sprawdzony: bez błędów, ale ogólny i bez liczb.
   Wzięte z niego: podstawy elektrotechniki, aparatura (RCBO, SPD…), protokół, ocena ryzyka, pytania ustne.
-- Części oznaczone **„uzupełnienie”** pochodzą spoza materiałów (głównie zakres D — organizacja pracy
-  wg rozporządzenia BHP z 28.08.2019). Przed egzaminem porównać z aktualnym tekstem przepisów.
+- Teksty rozporządzeń z Dziennika Ustaw (kwalifikacje 2022, BHP 2019) — na nich oparta lekcja o egzaminie
+  (stan na 2026: bezterminowe świadectwa nieważne od 3.07.2026) i lekcja o dozorze. Przy faktach są paragrafy.
+- bardzo-latwo.pl (październik 2026) — tematy, których brakowało: AFDD, typy SPD, czasy zadziałania RCD,
+  przeglądy okresowe (art. 62 Prawa budowlanego), kilka źródeł zasilania (PV, magazyn, agregat, UPS), gaszenie.
+- Kroki spoza slajdów mają w stopce źródło („uzupełnienie”, paragraf albo serwis).
 
 ## Budowa
 
@@ -24,7 +27,10 @@ Statyczny HTML/CSS/JS, bez frameworków i CDN-ów. Kolejność skryptów w `inde
 | `js/dane-dozor.js` | moduł „Egzamin” (wstawiany na początek) i „Dozór (D)” |
 | `js/dane-test.js` | fiszki (`FISZKI`) i pytania testowe (`PYTANIA`) |
 | `js/dane-podrecznik.js` | uzupełnienia z podręcznika + pytania ustne (`USTNE`) |
-| `js/app.js` | routing `#/…`, postęp (localStorage), fiszki, test, trening ustny, ściąga, kalkulatory |
+| `js/dane-2026.js` | pytania, fiszki i pytania ustne do lekcji Egzamin i Dozór (sprawdzone z rozporządzeniami) |
+| `js/dane-uzupelnienia.js` | kroki dopisane do lekcji (AFDD, SPD, RCD, przeglądy, PV/magazyn/agregat, gaszenie) |
+| `js/kurs.js` | plan kursu: części, kolejność lekcji, cele, zakres E / D / E+D (`ZAKRES`, pole `dla` w kroku) |
+| `js/app.js` | routing `#/…`: pulpit, kurs, lekcja krok po kroku z mini-testem, powtórki (pudełka Leitnera), test E/D, symulacja komisji, ściąga, kalkulatory, źródła |
 
 Postęp nauki zapisuje się w przeglądarce (`localStorage`, klucze `sep.*`) — na innym urządzeniu zaczyna się od zera.
 
